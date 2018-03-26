@@ -1,0 +1,6 @@
+# Ignore KLEE output folders, as these contain waaaaaaayyy too many files.
+klee-out-*
+klee-last
+
+# Ignore compiled C. The run-klee script compiles the C code for you anyways.
+*.bc
