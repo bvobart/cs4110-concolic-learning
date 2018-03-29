@@ -7,4 +7,4 @@ clang -I /home/klee/klee_src/include -emit-llvm -g -c Problem14-KLEE.c -o Proble
 echo -e "-------------------------------"
 echo -e "Compiled. Running KLEE..."
 echo -e "-------------------------------"
-klee Problem14-KLEE.bc
+klee --allow-external-sym-calls --emit-all-errors Problem14-KLEE.bc
