@@ -1,0 +1,13 @@
+model size 1
+0: Sun Apr 01 22:41:43 CEST 2018
+Hypothesis size: 1 states
+learning queries/symbols: 20/20(20/20 this learning round)
+testing queries/symbols: 27/85(7/65 this testing round)
+
+model size 2
+1: Sun Apr 01 22:41:44 CEST 2018
+Hypothesis size: 2 states
+learning queries/symbols: 103/478(76/393 this learning round)
+testing queries/symbols: 130/778(27/300 this testing round)
+
+Finished learning!

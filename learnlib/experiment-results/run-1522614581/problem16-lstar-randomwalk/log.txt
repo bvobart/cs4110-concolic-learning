@@ -1,0 +1,7 @@
+model size 545
+0: Mon Apr 02 00:03:10 CEST 2018
+Hypothesis size: 545 states
+learning queries/symbols: 59960/508700(59960/508700 this learning round)
+testing queries/symbols: 59989/509000(29/300 this testing round)
+
+Finished learning!
