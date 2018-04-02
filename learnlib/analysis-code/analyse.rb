@@ -4,6 +4,7 @@ require 'graphviz'
 require 'byebug'
 require 'colorize'
 require 'ostruct'
+require 'csv'
 
 ##
 # Class representing the result to a certain experiment
@@ -139,11 +140,12 @@ class Comparison
 end
 
 def analyze_run(run)
+  csv_lines = []
   Result::PROBLEMS.each do |problem|
     solution = Solution.new(problem: problem)
 
-    # Expect advanced testing methods to be run only on smallest problem instance
-    testing_methods = problem == 10 ? Result::TESTING_METHODS : [:randomwalk]
+    # Expect advanced testing methods to be run only on selected problem instances
+    testing_methods = [10,14].include?(problem) ? Result::TESTING_METHODS : [:randomwalk]
 
     testing_methods.each do |testing_method|
       Result::LEARNING_METHODS.each do |learning_method|
@@ -158,7 +160,15 @@ def analyze_run(run)
         comparison = Comparison.new(result: result, solution: solution)
         comparison.compare
         comparison.print_comparison_result
+        csv_lines << comparison.csv_row
       end
+    end
+  end
+
+  csv_lines.sort_by! { |line| [line[1], line[0]] }
+  CSV.open("../analysis-results/run-#{run}.csv", 'wb') do |csv|
+    csv_lines.each do |line|
+      csv << line
     end
   end
 end
