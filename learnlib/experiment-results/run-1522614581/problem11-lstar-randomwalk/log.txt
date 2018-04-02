@@ -1,0 +1,7 @@
+model size 36
+0: Sun Apr 01 22:44:21 CEST 2018
+Hypothesis size: 36 states
+learning queries/symbols: 3970/24620(3970/24620 this learning round)
+testing queries/symbols: 3999/24920(29/300 this testing round)
+
+Finished learning!
